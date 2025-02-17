@@ -26,4 +26,14 @@ public class Student {
 		
 	}
 
+	public int getRollNo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

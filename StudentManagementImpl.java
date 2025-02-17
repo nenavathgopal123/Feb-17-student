@@ -1,11 +1,7 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentManagementImpl  implements StudentManagement{
-	
-	//Student[] stuArray = new Student[100];
-	//int index=-1;
 	
 	
 	ArrayList<Student> stuList = new ArrayList<Student>();
@@ -14,7 +10,6 @@ public class StudentManagementImpl  implements StudentManagement{
 
 	@Override
 	public void addStudent(Student stu) {
-		//stuArray[++index] =stu;// 0
 		
 		stuList.add(stu);
 		
@@ -23,20 +18,38 @@ public class StudentManagementImpl  implements StudentManagement{
 
 	@Override
 	public void deleteStudent(int rollNo) {
-		// TODO Auto-generated method stub
+		for(int i=0;i<stuList.size();i++) {
+			Student stu = stuList.get(i);
+			if(rollNo == stu.getRollNo()) {
+				System.out.println("successfully deleted Student--->"+stu.getName());
+				stuList.remove(i);
+			
+			}
 		
+		}
 	}
 
 	@Override
 	public Student searchStudent(int rollNo) {
-		// TODO Auto-generated method stub
+		
+		for(int i=0;i<stuList.size();i++) {
+			Student stu = stuList.get(i);
+			if(rollNo == stu.getRollNo()) {
+				System.out.println(stu);
+				
+			}
+		
+		}
 		return null;
 	}
 
 	@Override
-	public List<Student> displayAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public  void displayAll() {
+		
+		for(int i=0;i<stuList.size();i++) {
+			Student stu = stuList.get(i);
+			System.out.println(stu);
+		}
 	}
 
 }
